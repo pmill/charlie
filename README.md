@@ -19,13 +19,14 @@ we don't suffer from bloated controllers. This domain code lives in `App/Domain/
 
 1. Env file is committed here for ease of setup. But for a real production application it should definitely not be committed.
 2. In production The email sending and other long-running backend processes should run in queue workers.
-2. Depending on the scale of data the app is required to handle, export and import functionality should also run via queue workers.
-3. For the customer slug-based URL requirement. The slug of the name is included in the URL, but I've also included a hash of the customer's id. This is to mitigate two customers having the same name.
-4. For the users only seeing and being able to manage their own customer data. This is achieved in two ways. The first is by using the `OwnedByAuthenticatedUser` eloquent scope on the `Customer` model to ensure that a user_id where clause is always added to customer queries. The second is by using a CustomerPolicy which is configured via the routes and route model binding.
-5. For the customer filtering and searching requirement. This is achieved using the `Filterable` eloquent trait.
-6. For the customer auditing requirement. This is achieved using the `Auditable` eloquent trait.
-7. The blade forms have CSRF protection enabled.
-8. Environment is setup using docker-compose. I wrote the docker configuration myself rather than using Laravel Sail or other pre-built solutions as I thought this was a better showcase of my knowledge.
+3. Depending on the scale of data the app is required to handle, export and import functionality should also run via queue workers.
+4. Also depending on the scale of data using a tool more suited to search and analytics of data (e.g. Elasticsearch for search, and OLAP database for analytics) is recommended.
+5. For the customer slug-based URL requirement. The slug of the name is included in the URL, but I've also included a hash of the customer's id. This is to mitigate two customers having the same name.
+6. For the users only seeing and being able to manage their own customer data. This is achieved in two ways. The first is by using the `OwnedByAuthenticatedUser` eloquent scope on the `Customer` model to ensure that a user_id where clause is always added to customer queries. The second is by using a CustomerPolicy which is configured via the routes and route model binding.
+7. For the customer filtering and searching requirement. This is achieved using the `Filterable` eloquent trait. 
+8. For the customer auditing requirement. This is achieved using the `Auditable` eloquent trait. 
+9. The blade forms have CSRF protection enabled. 
+10. Environment is setup using docker-compose. I wrote the docker configuration myself rather than using Laravel Sail or other pre-built solutions as I thought this was a better showcase of my knowledge.
 
 ## Improvements to be made
 
