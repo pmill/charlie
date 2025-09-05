@@ -24,6 +24,7 @@ we don't suffer from bloated controllers. This domain code lives in `App/Domain/
 5. For the customer filtering and searching requirement. This is achieved using the `Filterable` eloquent trait.
 6. For the customer auditing requirement. This is achieved using the `Auditable` eloquent trait.
 7. The blade forms have CSRF protection enabled.
+8. Environment is setup using docker-compose. I wrote the docker configuration myself rather than using Laravel Sail or other pre-built solutions as I thought this was a better showcase of my knowledge.
 
 ## Improvements to be made
 
