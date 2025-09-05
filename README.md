@@ -47,6 +47,7 @@ Once you have all of the above installed, run the following commands:
 ```
 composer install
 npm install
+npm run build
 docker compose up -d
 # wait a few seconds for mysql to start
 docker compose exec app php artisan migrate
