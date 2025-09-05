@@ -102,7 +102,7 @@
                         {{$customer->email}}
                     </td>
                     <td class="px-6 py-4">
-                        {{$customer->formatted_phone}}
+                        {{$customer->phone}}
                     </td>
                     <td class="px-6 py-4">
                         {{$customer->job_title}}

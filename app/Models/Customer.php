@@ -36,7 +36,6 @@ class Customer extends Model
     ];
 
     protected $appends = [
-        'formatted_phone',
         'name_slug',
     ];
 
@@ -88,16 +87,6 @@ class Customer extends Model
             'created_at',
             'updated_at',
         ];
-    }
-
-    /**
-     * Get the phone number with a leading plus.
-     */
-    public function getFormattedPhoneAttribute(): string
-    {
-        $phone = $this->attributes['phone'] ?? '';
-
-        return str_starts_with($phone, '+') || empty($phone) ? $phone : '+' . $phone;
     }
 
     /**

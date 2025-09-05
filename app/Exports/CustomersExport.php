@@ -69,7 +69,7 @@ class CustomersExport implements FromQuery, WithHeadings, WithMapping
         return [
             'name' => $row->name,
             'email' => $row->email,
-            'phone' => $row->formatted_phone,
+            'phone' => $row->phone,
             'organisation' => $row->organisation,
             'job_title' => $row->job_title,
             'date_of_birth' => $row->date_of_birth->format('Y-m-d'),

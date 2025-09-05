@@ -14,14 +14,9 @@ class CustomersImport implements OnEachRow, WithHeadingRow
 {
     public function onRow(Row $row)
     {
-        $data = $row->toArray();
-
-        // we store phone number in the database without the leading plus sign (if given)
-        $data['phone'] = ltrim($data['phone'], '+');
-
         return Customer::updateOrCreate(
             ['user_id' => auth()->id(), 'email' => $row['email']],
-            $data
+            $row->toArray()
         );
     }
 

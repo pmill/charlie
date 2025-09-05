@@ -71,7 +71,7 @@
                     <dd>
                         <ul>
                             <li class="me-1 inline-flex items-center text-gray-800 dark:text-neutral-200">
-                                {{ $customer->formatted_phone }}
+                                {{ $customer->phone }}
                             </li>
                         </ul>
                     </dd>
