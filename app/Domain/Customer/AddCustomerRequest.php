@@ -36,7 +36,7 @@ class AddCustomerRequest extends FormRequest
             'name.required' => 'Please enter the customer name.',
             'email.required' => 'Please enter an email address.',
             'email.email' => 'Please enter a valid email address.',
-            'email.unique' => 'This email is already registered.',
+            'email.unique' => 'This email is already associated with another customer.',
             'date_of_birth.date' => 'Date of birth must be a valid date.',
             'date_of_birth.date_format' => 'Date of birth must be in YYYY-MM-DD format.',
             'date_of_birth.before' => 'Date of birth must be in the past.',
